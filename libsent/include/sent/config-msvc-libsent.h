@@ -19,11 +19,30 @@
 /* Define if you have the ANSI C header files.   */
 #define STDC_HEADERS
 
-/* Define if your processor stores words with the most significant byte first (like Motorola and SPARC, unlike Intel and VAX).   */
-#undef WORDS_BIGENDIAN
-
 /* Define if use microphone input  */
 #define USE_MIC
+
+/* Define if you prefer addlog array function */
+#define USE_ADDLOG_ARRAY
+
+/* Define if you have zlib library (-lz).  */
+#define HAVE_ZLIB
+
+/* Define if you allow class N-gram  */
+#define CLASS_NGRAM
+
+/* Define if use sin/cos table for MFCC calculation  */
+#define MFCC_SINCOS_TABLE
+
+/* These would override command line arguments. By wrapping them up
+into a conditional, we give the user the power to not modify this
+header file but specify these symbols on the shell. GCC has the flags
+"-D" to define a symbol and "-U" to undefine a symbol. All of these
+should be undef by default anyway. */
+#ifndef LIBSENT_NO_UNDEF
+
+/* Define if your processor stores words with the most significant byte first (like Motorola and SPARC, unlike Intel and VAX).   */
+#undef WORDS_BIGENDIAN
 
 /* Define if use Datlink/Netaudio input  */
 #undef USE_NETAUDIO
@@ -39,9 +58,6 @@
 
 /* Define if you use integer word WORD_ID (for vocaburary of over 60k)  */
 #undef WORDS_INT
-
-/* Define if you prefer addlog array function */
-#define USE_ADDLOG_ARRAY
 
 /* Define if you use zcat command for compressed file input */
 #undef ZCAT
@@ -61,9 +77,6 @@
 /* Define if you have the socket library (-lsocket).   */
 #undef HAVE_LIBSOCKET
 
-/* Define if you have zlib library (-lz).  */
-#define HAVE_ZLIB
-
 /* Define if you have strcasecmp function  */
 #undef HAVE_STRCASECMP
 
@@ -76,14 +89,8 @@
 /* Define if you use libjcode */
 #undef USE_LIBJCODE
 
-/* Define if you allow class N-gram  */
-#define CLASS_NGRAM
-
 /* Define if you want to enable process forking for each adinnet connection */
 #undef FORK_ADINNET
-
-/* Define if use sin/cos table for MFCC calculation  */
-#define MFCC_SINCOS_TABLE
 
 /* Define if <sys/soundcard.h> found */
 #undef HAVE_SYS_SOUNDCARD_H
@@ -120,6 +127,8 @@
 
 /* Define if MBR support is enabled */
 #undef USE_MBR
+
+#endif /* LIBSENT_NO_UNDEF */
 
 /* define SIMD definitions from compiler defs to automatically choose
    one according to compiler setting (no runtime dispatch) on VisualStudio */
