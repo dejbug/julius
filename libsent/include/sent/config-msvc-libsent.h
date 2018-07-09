@@ -17,7 +17,9 @@
 //#undef const
 
 /* Define if you have the ANSI C header files.   */
+#ifndef STDC_HEADERS
 #define STDC_HEADERS
+#endif
 
 /* Define if use microphone input  */
 #define USE_MIC

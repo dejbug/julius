@@ -88,8 +88,8 @@ static void callback_result_final(Recog *recog, void *data)
 	// convert to wide char
 	//mbstowcs_s( &size, wstr, str, strlen(str)+1);
 	locale = j->getModelLocale();
-	if (locale) _mbstowcs_s_l( &size, wstr, str, strlen(str)+1, locale);
-	else mbstowcs_s( &size, wstr, str, strlen(str)+1);
+	if (locale) _mbstowcs_s_l( &size, wstr, sizeof(wstr), str, strlen(str)+1, locale);
+	else mbstowcs_s( &size, wstr, sizeof(wstr), str, strlen(str)+1);
 
 
 	// set status parameter
